@@ -1,15 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Applications from './pages/Applications';
+import Listing from './pages/Listing';
+import Layout from './components/layout'
+import './input.css'
 
-function App(props) {
-
-
-
+function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+    <>
+    <Layout>
+      <Router>
+          <Routes>
+            <Route exact path="/" element={<Applications />} />
+            <Route path="/listing" element={<Listing />} />
+          </Routes>
+        </Router>
+    </Layout>
+    </>
+
   );
 }
 
