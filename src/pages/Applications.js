@@ -3,7 +3,7 @@ import Kanban from '../components/kanban';
 
 function Applications() {
   return (
-    <div>
+    <div className=''>
       <Kanban />
     </div>
   );

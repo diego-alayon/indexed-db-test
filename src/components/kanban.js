@@ -15,8 +15,13 @@ function Kanban() {
   }, []);
 
   return (
-    <div>
-      <h2>Kanban</h2>
+    <div className="grid grid-cols-12">
+      <div className="col-span-3">
+        <div className='px-4 py-3 border-b border-l border-r flex justify-between'>
+          <div className='font-bold text-slate-600'>Apply</div>
+          <div>
+          </div>
+        </div>
       {selectedEmail && (
         <div>
           <h3>Applying</h3>
@@ -28,21 +33,37 @@ function Kanban() {
         </div>
       )}
       {selectedEmailsArray && selectedEmailsArray.length > 0 && (
-        <div>
-          <h3>Selected emails</h3>
-          <ul>
+          <div className="border-l border-r p-2 overflow-auto max-h-screen">
             {selectedEmailsArray.map((email, index) => (
-              <li key={index}>
-                <ul>
-                  <li>Nombre: {email.Name}</li>
-                  <li>Apellido: {email.Surname}</li>
-                  <li>Email: {email.email}</li>
-                </ul>
-              </li>
+              <div className="text-xs text-slate-600 bg-white p-2 mb-2" key={index}>
+                  <div>Company: {email.company}</div>
+                  <div>Job offer: {email.subject}</div>
+              </div>
             ))}
-          </ul>
-        </div>
+          </div>
       )}
+      </div>
+      <div className="col-span-3">
+        <div className='px-4 py-3 border-b border-r flex justify-between'>
+          <div className='font-bold text-slate-600'>Stage 2</div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-3">
+        <div className='px-4 py-3 border-b border-l border-r flex justify-between'>
+          <div className='font-bold text-slate-600'>Stage 3</div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-3">
+      <div className='px-4 py-3 border-b border-l border-r flex justify-between'>
+          <div className='font-bold text-slate-600'>Stage 4</div>
+          <div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
